@@ -1,3 +1,4 @@
+using Basket.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -35,6 +36,9 @@ namespace Basket.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket.API", Version = "v1" });
             });
+
+            services.AddScoped<IBasketRepo, BasketRepo>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
