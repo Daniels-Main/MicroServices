@@ -27,7 +27,6 @@ namespace Basket.API
         {
             services.AddStackExchangeRedisCache(options =>
             {
-                //Recoje el valor de appsettings.json
                 options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
             });
 
